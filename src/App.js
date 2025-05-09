@@ -176,7 +176,7 @@ function App() {
       <h1 className="mb-4 text-center">Form Management App</h1>
 
       {/* Online/Offline indicator */}
-      {/* <div
+      <div
         className={`alert ${isOnline ? "alert-success" : "alert-danger"} mb-3`}
         role="alert"
       >
@@ -186,7 +186,7 @@ function App() {
             Hard refresh (Ctrl+Shift+R/⌘+Shift+R) is disabled in offline mode
           </p>
         )}
-      </div> */}
+      </div>
 
       {/* View toggle buttons */}
       <div className="row mb-4">
