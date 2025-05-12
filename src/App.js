@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
+import QrScanner from "./QrScanner";
 
 // Register service worker outside of the component
 if ("serviceWorker" in navigator) {
@@ -320,6 +320,8 @@ function App() {
           </div>
         </div>
       )}
+
+      <QrScanner />
     </div>
 
     // <div className="App">
