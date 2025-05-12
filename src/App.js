@@ -167,7 +167,7 @@ function App() {
     setSubmissions(updatedSubmissions);
     saveToLocalStorage(updatedSubmissions);
 
-    alert("Form submitted successfully!");
+    alert("Form Created successfully!");
   };
 
   // Delete a submission
