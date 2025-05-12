@@ -146,6 +146,34 @@ function App() {
     alert("Form submitted successfully!");
   };
 
+  const handleSubmitScan = (data) => {
+    // Validate form
+    if (!data.name.trim()) {
+      alert("QR or Bar Code is blank");
+      return;
+    }
+
+    // Create new submission with unique ID
+    const newSubmission = {
+      id: Date.now(),
+      ...data,
+      date: new Date().toLocaleString(),
+    };
+
+    // Add to submissions array and save directly to localStorage
+    const updatedSubmissions = [...submissions, newSubmission];
+    setSubmissions(updatedSubmissions);
+    saveToLocalStorage(updatedSubmissions);
+
+    // Reset form
+    setFormData({
+      name: "",
+      mobile: "",
+    });
+
+    alert("Form submitted successfully!");
+  };
+
   // Delete a submission
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this submission?")) {
@@ -321,7 +349,7 @@ function App() {
         </div>
       )}
 
-      <QrScanner />
+      <QrScanner handleSubmitScan={handleSubmitScan} />
     </div>
 
     // <div className="App">

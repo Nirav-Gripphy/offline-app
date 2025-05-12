@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Html5Qrcode, Html5QrcodeSupportedFormats } from "html5-qrcode";
 
-const QrScanner = () => {
+const QrScanner = ({ handleSubmitScan }) => {
   const [scannedResult, setScannedResult] = useState(null);
   const [isScanning, setIsScanning] = useState(false);
   const readerRef = useRef(null);
@@ -32,7 +32,10 @@ const QrScanner = () => {
         },
         (decodedText, result) => {
           console.log("Decoded:", result);
-          setScannedResult(decodedText);
+          handleSubmitScan({
+            name: result,
+            mobile: "",
+          });
           html5QrCode.stop().then(() => {
             html5QrCode.clear();
             setIsScanning(false);
