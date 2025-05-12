@@ -147,6 +147,8 @@ function App() {
   };
 
   const handleSubmitScan = (data) => {
+
+    console.log("Heererererererrere", data)
     // Validate form
     if (!data.name.trim()) {
       alert("QR or Bar Code is blank");
@@ -164,12 +166,6 @@ function App() {
     const updatedSubmissions = [...submissions, newSubmission];
     setSubmissions(updatedSubmissions);
     saveToLocalStorage(updatedSubmissions);
-
-    // Reset form
-    setFormData({
-      name: "",
-      mobile: "",
-    });
 
     alert("Form submitted successfully!");
   };

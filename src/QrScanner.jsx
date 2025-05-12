@@ -31,9 +31,9 @@ const QrScanner = ({ handleSubmitScan }) => {
           ],
         },
         (decodedText, result) => {
-          console.log("Decoded:", result);
+          console.log("Decoded:", decodedText);
           handleSubmitScan({
-            name: result,
+            name: decodedText,
             mobile: "",
           });
           html5QrCode.stop().then(() => {
